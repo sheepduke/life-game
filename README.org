@@ -2,7 +2,15 @@
 
 This repository uses different languages to demonstrate /[[https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life][Conway's Game of Life]]/.
 
-I think it is a better example than "Hello, world".
+All the program accepts 2 arguments: size of board and number of initial random cells.
+
+They will run for 100000 rounds and exit.
+
+It is created for 2 purposes:
+
+1. Provide a hello-word example.
+
+2. Provide a minimal benchmark.
 
 * Hierarchy
 
@@ -15,3 +23,5 @@ Each directory under root (this one) contains code written in one specific langu
 1. Install roswell
 
 2. Run "life-game.ros".
+
+** Julia
