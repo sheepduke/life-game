@@ -1,0 +1,26 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp (ql:quickload '(life-game iterate) :silent t)
+  )
+
+(defpackage :ros.script.life-game.3752295163
+  (:use :cl))
+(in-package :ros.script.life-game.3752295163)
+
+(defun main (size seed-count)
+  (let* ((size (parse-integer size))
+         (seed-count (parse-integer seed-count))
+         (board (life-game:make-board size seed-count)))
+    (time 
+     (iter:iter (iter:for round from 0 below 100000)
+                ;; (format t "~&Round ~A~&" round)
+                ;; (life-game:print-board board)
+                (setf board (life-game:evolve board))
+                ;; (sleep 0.1)
+                ))))
+;;; vim: set ft=lisp lisp:

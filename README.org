@@ -1,0 +1,17 @@
+* Introduction
+
+This repository uses different languages to demonstrate /[[https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life][Conway's Game of Life]]/.
+
+I think it is a better example than "Hello, world".
+
+* Hierarchy
+
+Each directory under root (this one) contains code written in one specific language.
+
+* How to run
+
+** Common Lisp
+
+1. Install roswell
+
+2. Run "life-game.ros".
