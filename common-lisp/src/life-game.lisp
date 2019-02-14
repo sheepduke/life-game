@@ -49,10 +49,13 @@
 
 (defun print-board (board &optional (stream t))
   "Method for printing board"
-  (iter (for row in-vector board)
-        (iter (for cell in-vector row)
-              (format stream "~A " (if cell #\# #\-)))
-        (format stream "~&")))
+  (iter (for row from 0 below (board-size board))
+    (iter (for col from 0 below (board-size board))
+      (format stream "~A " (if (board-cell board row col) #\# #\-)))
+  ;; (iter (for row in-vector board)
+  ;;       (iter (for cell in-vector row)
+  ;;         )
+    (format stream "~&")))
 
 (defun board-cell-alive-p (board row col)
   "Return T if given cell shall remain alive or reborn."

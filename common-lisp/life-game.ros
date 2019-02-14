@@ -5,11 +5,12 @@ exec ros -Q -- $0 "$@"
 |#
 (progn ;;init forms
   (ros:ensure-asdf)
-  #+quicklisp (ql:quickload '(life-game iterate) :silent t)
+  #+quicklisp (ql:quickload '(life-game) :silent t)
   )
 
 (defpackage :ros.script.life-game.3752295163
-  (:use :cl))
+  (:use :cl
+        :life-game))
 (in-package :ros.script.life-game.3752295163)
 
 (defun main (size seed-count)
