@@ -2,8 +2,10 @@
   (:use :cl
         :iterate
         :optima)
-  (:export :board-size
-           :make-board
-           :print-board
-           :evolve))
+  (:export
+   :board-size
+   :make-board
+   :place-random-seeds
+   :print-board
+   :evolve))
 (in-package :life-game)

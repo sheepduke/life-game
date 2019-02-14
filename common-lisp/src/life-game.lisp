@@ -1,6 +1,6 @@
 (in-package :life-game)
 
-(defun make-empty-board (size)
+(defun make-board (size)
   "Return an empty board of given SIZE."
   (declare (type fixnum size))
   (the (simple-array boolean 2)
@@ -9,9 +9,9 @@
                    :initial-element nil
                    :adjustable nil)))
 
-(defun make-board (size seed-count)
-  "Return a BOARD object of given SIZE."
-  (let* ((board (make-empty-board size))
+(defun place-random-seeds (board seed-count)
+  "Place random seeds on the given board."
+  (let* ((size (board-size board))
          (range (* size size))
          (state (make-random-state t)))
     (iterate (while (> seed-count 0))
@@ -70,7 +70,7 @@
   "Evolve to the next turn."
   (declare (optimize (speed 3) (safety 0)))
   (let* ((size (board-size board))
-         (new-board (make-empty-board size)))
+         (new-board (make-board size)))
     (iter (for row from 0 below size)
           (iter (for col from 0 below size)
                 (setf (aref new-board row col)
