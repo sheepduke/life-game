@@ -34,14 +34,12 @@ namespace life_game {
     }
   }
 
-  void Board::evolve() {
-    Board new_board(size);
+  void Board::evolve_to(Board &board) {
     for (size_t row = 0; row < size; row++) {
       for (size_t col = 0; col < size; col++) {
-        new_board.board[row][col] = is_alive(row, col);
+        board.board[row][col] = is_alive(row, col);
       }
     }
-    assign(new_board);
   }
 
   void Board::print() const {
@@ -50,14 +48,6 @@ namespace life_game {
         cout << (board[row][col] ? "# " : "- ");
       }
       cout << endl;
-    }
-  }
-
-  void Board::assign(const Board &board) {
-    for (size_t row = 0; row < size; row++) {
-      for (size_t col = 0; col < size; col++) {
-        this->board[row][col] = board.board[row][col];
-      }
     }
   }
 

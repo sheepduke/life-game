@@ -21,17 +21,21 @@ int main(int argc, char *argv[]) {
 
   ss >> size >> random_count;
   
-  Board board(size);
-  board.place_random_seeds(random_count);
-  // board.print();
+  Board *board = new Board(size);
+  board->place_random_seeds(random_count);
+  // board->print();
 
   for (auto i = 0 ; i < 100000; i++) {
-    board.evolve();
+    Board *new_board = new Board(size);
+    board->evolve_to(*new_board);
+    delete board;
+    board = new_board;
     // cout << "Iteration " << i << " " << endl;
-    // board.print();
+    // board->print();
     // this_thread::sleep_for(chrono::milliseconds(500));
   }
-  
+
+  delete board;
 
   return 0;
 }

@@ -8,11 +8,10 @@ namespace life_game {
   public:
     Board(size_t size);
     void place_random_seeds(size_t seed_count);
-    void evolve();
+    void evolve_to(Board &board);
     void print() const;
     
   private:
-    void assign(const Board &board);
     bool is_alive(size_t row, size_t col) const;
     size_t living_neighbour_count(size_t row, size_t col) const;
 
