@@ -1,0 +1,8 @@
+[package]
+name = "rust"
+version = "0.1.0"
+authors = ["YUE Daian <yue_d@worksap.co.jp>"]
+edition = "2018"
+
+[dependencies]
+rand = "0.6"
