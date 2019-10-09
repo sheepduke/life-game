@@ -13,7 +13,7 @@ struct board {
 board board_new(size_t size) {
   board board = malloc(sizeof(struct board));
   board->size = size;
-  board->rows = malloc(sizeof(bit_array));
+  board->rows = malloc(sizeof(bit_array) * size);
   for (unsigned int i = 0; i < size; i++) {
     board->rows[i] = bit_array_new(size);
   }
