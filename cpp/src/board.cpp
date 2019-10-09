@@ -9,12 +9,8 @@ namespace life_game {
 
   Board::Board(size_t size) {
     this->size = size;
-    board = new bool*[size];
     for (size_t i = 0; i < size; i++) {
-      board[i] = new bool[size];
-      for (size_t j = 0; j < size; j++) {
-        board[i][j] = false;
-      }
+      board.push_back(vector<bool>(size, false));
     }
   }
 
@@ -34,7 +30,7 @@ namespace life_game {
     }
   }
 
-  void Board::evolve_to(Board &board) {
+  void Board::evolve(Board &board) {
     for (size_t row = 0; row < size; row++) {
       for (size_t col = 0; col < size; col++) {
         board.board[row][col] = is_alive(row, col);
@@ -56,7 +52,7 @@ namespace life_game {
     return count == 3 || (count == 2 && board[row][col]);
   }
 
-  size_t Board::living_neighbour_count(size_t row, size_t col) const {
+  inline size_t Board::living_neighbour_count(size_t row, size_t col) const {
     size_t count = 0;
     
     size_t row_start = row > 0 ? row - 1 : row;

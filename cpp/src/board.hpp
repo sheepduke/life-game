@@ -8,7 +8,7 @@ namespace life_game {
   public:
     Board(size_t size);
     void place_random_seeds(size_t seed_count);
-    void evolve_to(Board &board);
+    void evolve(Board &board);
     void print() const;
     
   private:
@@ -17,7 +17,8 @@ namespace life_game {
 
     size_t size;
 
-    bool **board;
+    // bool **board;
+    std::vector<std::vector<bool>> board;
   };
 }
 

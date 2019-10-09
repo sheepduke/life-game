@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
 
   for (auto i = 0 ; i < 100000; i++) {
     Board *new_board = new Board(size);
-    board->evolve_to(*new_board);
+    board->evolve(*new_board);
     delete board;
     board = new_board;
     // cout << "Iteration " << i << " " << endl;
