@@ -33,9 +33,6 @@
   (iter (for row from 0 below (board-size board))
     (iter (for col from 0 below (board-size board))
       (format stream "~A " (if (aref board row col) #\# #\-)))
-  ;; (iter (for row in-vector board)
-  ;;       (iter (for cell in-vector row)
-  ;;         )
     (format stream "~&")))
 
 (declaim (inline cell-alive-p))
