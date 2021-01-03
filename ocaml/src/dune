@@ -1,0 +1,3 @@
+(executable
+ (name life_game)
+ (libraries base stdio unix))
