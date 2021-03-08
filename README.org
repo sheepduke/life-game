@@ -4,7 +4,7 @@ This repository uses different languages to demonstrate /[[https://en.wikipedia.
 
 All the program accepts 2 arguments: size of board and number of initial random cells.
 
-They will run for 100000 rounds and exit.
+They will run for 100,000 rounds and exit.
 
 It is created for 2 purposes:
 
@@ -20,16 +20,20 @@ Each directory under root (this one) contains code written in one specific langu
 
 I ran it with 40 board size and 800 initial seeds. C int array version is treated as the benchmark.
 
-|---------------+---------+---------------------------|
-| Version       | Time(s) | Environment               |
-|---------------+---------+---------------------------|
-| C (int array) |    1.08 | gcc 10.2.0                |
-| C++ (STL)     |     1.6 | gcc 10.2.0                |
-| C++ (array)   |   1.539 | gcc 10.2.0                |
-| Rust          |    1.58 | cargo 1.47.0              |
-| OCaml         |     3.8 | ocamlc 4.10.0, dune 2.6.1 |
-| Julia         |     7.2 | Julia 1.5.2               |
-| Common Lisp   |    10.8 | SBCL 1.4                  |
-|---------------+---------+---------------------------|
+|----------------+---------+-----------------------------|
+| Version        | Time(s) | Environment                 |
+|----------------+---------+-----------------------------|
+| C (int array)  |    1.08 | gcc 10.2.0                  |
+| C++ (STL)      |     1.6 | gcc 10.2.0                  |
+| C++ (array)    |   1.539 | gcc 10.2.0                  |
+| Rust           |    1.58 | cargo 1.47.0                |
+| OCaml          |     3.8 | ocamlc 4.10.0, dune 2.6.1   |
+| Julia          |     7.2 | Julia 1.5.2                 |
+| Common Lisp    |    10.8 | SBCL 1.4                    |
+| Elixir (array) |     312 | Elixir 1.11.3/Erlang OTP 23 |
+| Elixir (map)   |     281 | Elixir 1.11.3/Erlang OTP 23 |
+| Elixir (set)   |     236 | Elixir 1.11.3/Erlang OTP 23 |
+| Elixir (ets)   |     225 |                             |
+|----------------+---------+-----------------------------|
 
 I would say OCaml is very impressive here. It is really a sweet point between development speed and runtime performance.
