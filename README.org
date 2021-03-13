@@ -33,7 +33,9 @@ I ran it with 40 board size and 800 initial seeds. C int array version is treate
 | Elixir (array) |     312 | Elixir 1.11.3/Erlang OTP 23 |
 | Elixir (map)   |     281 | Elixir 1.11.3/Erlang OTP 23 |
 | Elixir (set)   |     236 | Elixir 1.11.3/Erlang OTP 23 |
-| Elixir (ets)   |     225 |                             |
+| Elixir (ets)   |     225 | Elixir 1.11.3/Erlang OTP 23 |
 |----------------+---------+-----------------------------|
 
 I would say OCaml is very impressive here. It is really a sweet point between development speed and runtime performance.
+
+Also it is not fair for Elixir. The program is computing centric and the algorithm is not optimized for concurrency. In a IO bound scenario, I believe Elixir would have better performance.
