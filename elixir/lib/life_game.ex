@@ -1,10 +1,4 @@
-defprotocol LifeGame do
-  defdelegate place_random_seeds(board, count), to: LifeGame.Util
-
-  defdelegate evolve(board), to: LifeGame.Util
-end
-
-defmodule LifeGame.Util do
+defmodule LifeGame do
   def place_random_seeds(board, count) do
     size = Board.size(board)
 
